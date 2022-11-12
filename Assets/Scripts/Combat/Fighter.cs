@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using RPG.Core;
 using RPG.Movement;
 using UnityEngine;
 
@@ -41,7 +42,7 @@ namespace RPG.Combat
 
         public void Attack(CombatTarget combatTarget)
         {
-            Debug.Log("Attack!!!");
+            GetComponent<ActionScheduler>().StartAction(this);
             target = combatTarget.transform;
         }
 
