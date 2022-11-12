@@ -885,36 +885,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 496924, guid: 653c97bd88b4b084d87714542c43ee5a, type: 3}
   m_PrefabInstance: {fileID: 1817806477}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2001739806 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5773795702912616023, guid: 5b0bf678d50a64afa9c36a5c1c90928b, type: 3}
-  m_PrefabInstance: {fileID: 5773795702053840457}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2001739816 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5773795702912616043, guid: 5b0bf678d50a64afa9c36a5c1c90928b, type: 3}
   m_PrefabInstance: {fileID: 5773795702053840457}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &2001739817
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2001739806}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &2144703408
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -994,11 +969,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2329439900326819654, guid: 5054da80ddcdc43189cab55b74d1e320, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2329439900326819654, guid: 5054da80ddcdc43189cab55b74d1e320, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2329439900326819654, guid: 5054da80ddcdc43189cab55b74d1e320, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1042,15 +1017,15 @@ PrefabInstance:
       objectReference: {fileID: 2001739816}
     - target: {fileID: 2329439900904913773, guid: 5054da80ddcdc43189cab55b74d1e320, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.110708
+      value: 9.56
       objectReference: {fileID: 0}
     - target: {fileID: 2329439900904913773, guid: 5054da80ddcdc43189cab55b74d1e320, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.2767
+      value: 9.69
       objectReference: {fileID: 0}
     - target: {fileID: 2329439900904913773, guid: 5054da80ddcdc43189cab55b74d1e320, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.2637024
+      value: -1.79
       objectReference: {fileID: 0}
     - target: {fileID: 2329439900904913773, guid: 5054da80ddcdc43189cab55b74d1e320, type: 3}
       propertyPath: m_LocalRotation.w

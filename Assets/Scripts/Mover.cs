@@ -14,6 +14,8 @@ public class Mover : MonoBehaviour
         {
             MoveToCursor();
         }
+
+        UpdateAnimator();
     }
 
     private void MoveToCursor()
@@ -26,5 +28,17 @@ public class Mover : MonoBehaviour
         {
             GetComponent<NavMeshAgent>().destination = hit.point;
         }
+    }
+
+    private void UpdateAnimator()
+    {
+        Vector3 velocity = GetComponent<NavMeshAgent>().velocity;
+
+        // global value(nav-mesh value) is not meaningful to local(animator) so convert it
+        // global value has x,y value too. its more complex data than we need in here, that's why?
+        Vector3 localVelocity = transform.InverseTransformDirection(velocity);
+
+        float speed = localVelocity.z;
+        GetComponent<Animator>().SetFloat("forwardSpeed", speed);
     }
 }
