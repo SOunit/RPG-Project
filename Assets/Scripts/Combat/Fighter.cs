@@ -14,17 +14,21 @@ namespace RPG.Combat
 
         private void Update()
         {
+            // do nothing if there's no combat target
             if (target == null)
             {
                 return;
             }
 
+            // if target exist, do them
             if (!GetIsInRange())
             {
+                // follow target if exist
                 GetComponent<Mover>().MoveTo(target.position);
             }
             else
             {
+                // stop with distance
                 GetComponent<Mover>().Stop();
             }
         }
