@@ -3,30 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Mover : MonoBehaviour
+namespace RPG.Movement
 {
-    [SerializeField]
-    Transform target;
-
-    void Update()
+    public class Mover : MonoBehaviour
     {
-        UpdateAnimator();
-    }
+        [SerializeField]
+        Transform target;
 
-    public void MoveTo(Vector3 destination)
-    {
-        GetComponent<NavMeshAgent>().destination = destination;
-    }
+        void Update()
+        {
+            UpdateAnimator();
+        }
 
-    private void UpdateAnimator()
-    {
-        Vector3 velocity = GetComponent<NavMeshAgent>().velocity;
+        public void MoveTo(Vector3 destination)
+        {
+            GetComponent<NavMeshAgent>().destination = destination;
+        }
 
-        // global value(nav-mesh value) is not meaningful to local(animator) so convert it
-        // global value has x,y value too. its more complex data than we need in here, that's why?
-        Vector3 localVelocity = transform.InverseTransformDirection(velocity);
+        private void UpdateAnimator()
+        {
+            Vector3 velocity = GetComponent<NavMeshAgent>().velocity;
 
-        float speed = localVelocity.z;
-        GetComponent<Animator>().SetFloat("forwardSpeed", speed);
+            // global value(nav-mesh value) is not meaningful to local(animator) so convert it
+            // global value has x,y value too. its more complex data than we need in here, that's why?
+            Vector3 localVelocity =
+                transform.InverseTransformDirection(velocity);
+
+            float speed = localVelocity.z;
+            GetComponent<Animator>().SetFloat("forwardSpeed", speed);
+        }
     }
 }
