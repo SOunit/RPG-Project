@@ -11,10 +11,17 @@ namespace RPG.Combat
         [SerializeField]
         float weaponRange = 2f;
 
+        [SerializeField]
+        float timeBetweenAttacks = 1f;
+
         Transform target;
+
+        float timeSinceLastAttack = 0f;
 
         private void Update()
         {
+            timeSinceLastAttack += Time.deltaTime;
+
             // do nothing if there's no combat target
             if (target == null)
             {
@@ -31,7 +38,11 @@ namespace RPG.Combat
             {
                 // stop with distance
                 GetComponent<Mover>().Cancel();
-                AttackBehaviour();
+                if (timeSinceLastAttack > timeBetweenAttacks)
+                {
+                    AttackBehaviour();
+                    timeSinceLastAttack = 0f;
+                }
             }
         }
 
