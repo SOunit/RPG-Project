@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using RPG.Core;
 using RPG.Movement;
 using UnityEngine;
@@ -13,6 +11,9 @@ namespace RPG.Combat
 
         [SerializeField]
         float timeBetweenAttacks = 1f;
+
+        [SerializeField]
+        float weaponDamage = 5f;
 
         Transform target;
 
@@ -38,17 +39,25 @@ namespace RPG.Combat
             {
                 // stop with distance
                 GetComponent<Mover>().Cancel();
-                if (timeSinceLastAttack > timeBetweenAttacks)
-                {
-                    AttackBehaviour();
-                    timeSinceLastAttack = 0f;
-                }
+                AttackBehaviour();
             }
         }
 
         private void AttackBehaviour()
         {
-            GetComponent<Animator>().SetTrigger("attack");
+            if (timeSinceLastAttack > timeBetweenAttacks)
+            {
+                // this will trigger the Hit() event
+                GetComponent<Animator>().SetTrigger("attack");
+                timeSinceLastAttack = 0f;
+            }
+        }
+
+        // Animation Event
+        void Hit()
+        {
+            Health healthComponent = target.GetComponent<Health>();
+            healthComponent.TakeDamage (weaponDamage);
         }
 
         private bool GetIsInRange()
@@ -66,11 +75,6 @@ namespace RPG.Combat
         public void Cancel()
         {
             target = null;
-        }
-
-        // Animation Event
-        void Hit()
-        {
         }
     }
 }
