@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: health
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: -786089532931469610, guid: 5b0bf678d50a64afa9c36a5c1c90928b, type: 3}
+      propertyPath: healthPoints
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5773795702912616023, guid: 5b0bf678d50a64afa9c36a5c1c90928b, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -78,7 +82,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5773795702912616043, guid: 5b0bf678d50a64afa9c36a5c1c90928b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -10.81
       objectReference: {fileID: 0}
     - target: {fileID: 5773795702912616043, guid: 5b0bf678d50a64afa9c36a5c1c90928b, type: 3}
       propertyPath: m_LocalPosition.y
