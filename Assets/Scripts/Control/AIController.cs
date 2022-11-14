@@ -18,11 +18,18 @@ namespace RPG.Control
 
         Health health;
 
+        Mover mover;
+
+        Vector3 guardPosition;
+
         private void Start()
         {
             fighter = GetComponent<Fighter>();
             player = GameObject.FindWithTag("Player");
             health = GetComponent<Health>();
+            mover = GetComponent<Mover>();
+
+            guardPosition = transform.position;
         }
 
         private void Update()
@@ -38,7 +45,7 @@ namespace RPG.Control
             }
             else
             {
-                fighter.Cancel();
+                mover.StartMoveAction (guardPosition);
             }
         }
 
