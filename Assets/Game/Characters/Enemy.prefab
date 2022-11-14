@@ -72,6 +72,10 @@ PrefabInstance:
       propertyPath: healthPoints
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2001739811, guid: 5b0bf678d50a64afa9c36a5c1c90928b, type: 3}
+      propertyPath: m_Speed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5773795702912616023, guid: 5b0bf678d50a64afa9c36a5c1c90928b, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -82,7 +86,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5773795702912616043, guid: 5b0bf678d50a64afa9c36a5c1c90928b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.81
+      value: -8.84
       objectReference: {fileID: 0}
     - target: {fileID: 5773795702912616043, guid: 5b0bf678d50a64afa9c36a5c1c90928b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -90,7 +94,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5773795702912616043, guid: 5b0bf678d50a64afa9c36a5c1c90928b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 5773795702912616043, guid: 5b0bf678d50a64afa9c36a5c1c90928b, type: 3}
       propertyPath: m_LocalRotation.w
