@@ -25,6 +25,10 @@ namespace RPG.Control
         [SerializeField]
         float waypointDwellTime = 3f;
 
+        [SerializeField]
+        [Range(0, 1)]
+        float patrolSpeedFraction = .2f;
+
         int currentWaypointIndex = 0;
 
         Fighter fighter;
@@ -103,7 +107,7 @@ namespace RPG.Control
 
             if (timeSinceArrivedAtWaypoint > waypointDwellTime)
             {
-                mover.StartMoveAction (nextPosition);
+                mover.StartMoveAction (nextPosition, patrolSpeedFraction);
             }
         }
 
