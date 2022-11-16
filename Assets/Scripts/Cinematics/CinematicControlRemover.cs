@@ -1,22 +1,28 @@
+using RPG.Control;
+using RPG.Core;
 using UnityEngine;
 using UnityEngine.Playables;
 
 public class CinematicControlRemover : MonoBehaviour
 {
+    GameObject player;
+
     private void Start()
     {
         // event + observer pattern in C#
         GetComponent<PlayableDirector>().played += DisableControl;
         GetComponent<PlayableDirector>().stopped += EnableControl;
+        player = GameObject.FindWithTag("Player");
     }
 
     void DisableControl(PlayableDirector pd)
     {
-        Debug.Log("DisableControl");
+        player.GetComponent<ActionScheduler>().CancelCurrentAction();
+        player.GetComponent<PlayerController>().enabled = false;
     }
 
     void EnableControl(PlayableDirector pd)
     {
-        Debug.Log("EnableControl");
+        player.GetComponent<PlayerController>().enabled = true;
     }
 }
