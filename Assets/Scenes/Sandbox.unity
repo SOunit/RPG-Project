@@ -2117,7 +2117,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465044993}
-  m_LocalRotation: {x: 0.2518474, y: -0.035248026, z: 0.009179295, w: 0.9670813}
+  m_LocalRotation: {x: 0.25184736, y: -0.035248064, z: 0.009179302, w: 0.9670813}
   m_LocalPosition: {x: 0.9, y: 7.26, z: -21.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2559,7 +2559,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1650513870}
-  m_LocalRotation: {x: 0.046287388, y: 0.22498776, z: -0.010700848, w: 0.9732027}
+  m_LocalRotation: {x: 0.046287388, y: 0.22498776, z: -0.010700849, w: 0.9732027}
   m_LocalPosition: {x: -16.993784, y: 9.821077, z: -2.8232431}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3117,6 +3117,7 @@ GameObject:
   - component: {fileID: 1831600156}
   - component: {fileID: 1831600158}
   - component: {fileID: 1831600157}
+  - component: {fileID: 1831600159}
   m_Layer: 0
   m_Name: Fader
   m_TagString: Untagged
@@ -3255,6 +3256,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1831600151}
   m_CullTransparentMesh: 1
+--- !u!114 &1831600159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831600151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd23ecdca24c4f4d928039fa109b155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1861202585
 GameObject:
   m_ObjectHideFlags: 0
