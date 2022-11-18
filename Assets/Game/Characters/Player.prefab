@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: healthPoints
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 3533218533770186689, guid: 5b0bf678d50a64afa9c36a5c1c90928b, type: 3}
+      propertyPath: uniqueIdentifier
+      value: player
+      objectReference: {fileID: 0}
     - target: {fileID: 5773795702053840459, guid: 5b0bf678d50a64afa9c36a5c1c90928b, type: 3}
       propertyPath: weaponDamage
       value: 10
@@ -136,18 +140,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5773795702912616023, guid: 5b0bf678d50a64afa9c36a5c1c90928b, type: 3}
   m_PrefabInstance: {fileID: 4199567153280953971}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5052276806117885453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7667229427012282404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fb02326469504363aecd78baae411f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!136 &864252469
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -162,3 +154,15 @@ CapsuleCollider:
   m_Height: 1.7
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &5052276806117885453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7667229427012282404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fb02326469504363aecd78baae411f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
