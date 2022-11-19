@@ -1502,6 +1502,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8712190580197633507, guid: 008fde829b18a488c89d7515d4c42099, type: 3}
+      propertyPath: weaponOverride
+      value: 
+      objectReference: {fileID: 22100000, guid: b65ea77711f9940bc97108377beff37e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 008fde829b18a488c89d7515d4c42099, type: 3}
 --- !u!1001 &2045828331
