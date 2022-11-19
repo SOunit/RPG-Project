@@ -1,3 +1,4 @@
+using System;
 using RPG.Core;
 using RPG.Movement;
 using UnityEngine;
@@ -25,6 +26,11 @@ namespace RPG.Combat
 
         float timeSinceLastAttack = Mathf.Infinity;
 
+        private void Start()
+        {
+            SpawnWeapon();
+        }
+
         private void Update()
         {
             timeSinceLastAttack += Time.deltaTime;
@@ -47,6 +53,11 @@ namespace RPG.Combat
                 GetComponent<Mover>().Cancel();
                 AttackBehaviour();
             }
+        }
+
+        private void SpawnWeapon()
+        {
+            Instantiate (weaponPrefab, handTransform);
         }
 
         public bool CanAttack(GameObject combatTarget)
