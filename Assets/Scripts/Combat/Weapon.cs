@@ -14,12 +14,35 @@ namespace RPG.Combat
         AnimatorOverrideController animatorOverride = null;
 
         [SerializeField]
-        GameObject weaponPrefab = null;
+        GameObject equippedPrefab = null;
+
+        [SerializeField]
+        float weaponRange = 2f;
+
+        [SerializeField]
+        float weaponDamage = 5f;
 
         public void Spawn(Transform handTransform, Animator animator)
         {
-            Instantiate (weaponPrefab, handTransform);
-            animator.runtimeAnimatorController = animatorOverride;
+            if (equippedPrefab != null)
+            {
+                Instantiate (equippedPrefab, handTransform);
+            }
+
+            if (animatorOverride != null)
+            {
+                animator.runtimeAnimatorController = animatorOverride;
+            }
+        }
+
+        public float GetRange()
+        {
+            return weaponRange;
+        }
+
+        public float GetDamage()
+        {
+            return weaponDamage;
         }
     }
 }
