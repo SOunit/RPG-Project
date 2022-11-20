@@ -25,7 +25,7 @@ public class Projectile : MonoBehaviour
             return;
         }
 
-        if (isHoming)
+        if (isHoming && !target.IsDead())
         {
             transform.LookAt(GetAimLocation());
         }
@@ -35,6 +35,12 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Health>() != target)
+        {
+            return;
+        }
+
+        // to fix arrow disappear when collide with dead enemy
+        if (target.IsDead())
         {
             return;
         }
