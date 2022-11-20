@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5001859255198505153, guid: cf2aa23446cc84cb1a67c3e18f1a1dfa, type: 3}
+      propertyPath: isHoming
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5759477369826084844, guid: cf2aa23446cc84cb1a67c3e18f1a1dfa, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
       value: 0.36320752
@@ -65,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9118626759024535705, guid: cf2aa23446cc84cb1a67c3e18f1a1dfa, type: 3}
       propertyPath: m_Name
-      value: Enemy ArrowProjectile
+      value: ArrowProjectile Red
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf2aa23446cc84cb1a67c3e18f1a1dfa, type: 3}

@@ -6,9 +6,17 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     float speed = 1f;
 
+    [SerializeField]
+    bool isHoming = false;
+
     Health target = null;
 
     float damage = 0f;
+
+    private void Start()
+    {
+        transform.LookAt(GetAimLocation());
+    }
 
     void Update()
     {
@@ -17,7 +25,10 @@ public class Projectile : MonoBehaviour
             return;
         }
 
-        transform.LookAt(GetAimLocation());
+        if (isHoming)
+        {
+            transform.LookAt(GetAimLocation());
+        }
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
