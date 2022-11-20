@@ -17,10 +17,10 @@ namespace RPG.Combat
         GameObject equippedPrefab = null;
 
         [SerializeField]
-        float weaponRange = 2f;
+        float weaponDamage = 5f;
 
         [SerializeField]
-        float weaponDamage = 5f;
+        float weaponRange = 2f;
 
         [SerializeField]
         bool isRightHanded = true;
