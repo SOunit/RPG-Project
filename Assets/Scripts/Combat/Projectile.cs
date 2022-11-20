@@ -8,6 +8,8 @@ public class Projectile : MonoBehaviour
 
     Health target = null;
 
+    float damage = 0f;
+
     void Update()
     {
         if (target == null)
@@ -19,9 +21,21 @@ public class Projectile : MonoBehaviour
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
-    public void SetTarget(Health target)
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<Health>() != target)
+        {
+            return;
+        }
+
+        target.TakeDamage (damage);
+        Destroy(this.gameObject);
+    }
+
+    public void SetTarget(Health target, float damage)
     {
         this.target = target;
+        this.damage = damage;
     }
 
     private Vector3 GetAimLocation()
