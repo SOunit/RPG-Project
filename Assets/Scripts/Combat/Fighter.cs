@@ -102,14 +102,32 @@ namespace RPG.Combat
             {
                 return;
             }
-            target.TakeDamage(defaultWeapon.GetDamage());
+
+            if (currentWeapon.HasProjectile())
+            {
+                currentWeapon.LaunchProjectile (
+                    rightHandTransform,
+                    leftHandTransform,
+                    target
+                );
+            }
+            else
+            {
+                target.TakeDamage(currentWeapon.GetDamage());
+            }
+        }
+
+        // animation has shoot event
+        void Shoot()
+        {
+            Hit();
         }
 
         private bool GetIsInRange()
         {
             return Vector3
                 .Distance(transform.position, target.transform.position) <
-            defaultWeapon.GetRange();
+            currentWeapon.GetRange();
         }
 
         public void Cancel()
