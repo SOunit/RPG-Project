@@ -63,6 +63,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Archer
       objectReference: {fileID: 0}
+    - target: {fileID: 4106324945970235486, guid: 728c358f3914d4ddc9b1f6aa4fea5af2, type: 3}
+      propertyPath: characterClass
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 728c358f3914d4ddc9b1f6aa4fea5af2, type: 3}
 --- !u!1 &461688468665346972 stripped
@@ -84,3 +88,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   characterClass: 3
+  progression: {fileID: 0}

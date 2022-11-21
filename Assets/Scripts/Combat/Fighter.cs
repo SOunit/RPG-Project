@@ -65,6 +65,11 @@ namespace RPG.Combat
             weapon.Spawn (rightHandTransform, leftHandTransform, animator);
         }
 
+        public Health GetTarget()
+        {
+            return target;
+        }
+
         public bool CanAttack(GameObject combatTarget)
         {
             if (combatTarget == null)
