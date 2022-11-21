@@ -1,78 +1,100 @@
 using RPG.Core;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+namespace RPG.Combat
 {
-    [SerializeField]
-    float speed = 1f;
-
-    [SerializeField]
-    bool isHoming = false;
-
-    [SerializeField]
-    GameObject hitEffect = null;
-
-    Health target = null;
-
-    float damage = 0f;
-
-    private void Start()
+    public class Projectile : MonoBehaviour
     {
-        transform.LookAt(GetAimLocation());
-    }
+        [SerializeField]
+        float speed = 1f;
 
-    void Update()
-    {
-        if (target == null)
-        {
-            return;
-        }
+        [SerializeField]
+        bool isHoming = false;
 
-        if (isHoming && !target.IsDead())
+        [SerializeField]
+        GameObject hitEffect = null;
+
+        [SerializeField]
+        float maxLifeTime = 10f;
+
+        [SerializeField]
+        GameObject[] destroyOnHit = null;
+
+        [SerializeField]
+        float lifeAfterImpact = 2f;
+
+        Health target = null;
+
+        float damage = 0f;
+
+        private void Start()
         {
             transform.LookAt(GetAimLocation());
         }
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
-    }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.GetComponent<Health>() != target)
+        void Update()
         {
-            return;
+            if (target == null)
+            {
+                return;
+            }
+
+            if (isHoming && !target.IsDead())
+            {
+                transform.LookAt(GetAimLocation());
+            }
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
 
-        // to fix arrow disappear when collide with dead enemy
-        if (target.IsDead())
+        private void OnTriggerEnter(Collider other)
         {
-            return;
+            if (other.GetComponent<Health>() != target)
+            {
+                return;
+            }
+
+            // to fix arrow disappear when collide with dead enemy
+            if (target.IsDead())
+            {
+                return;
+            }
+
+            target.TakeDamage (damage);
+
+            speed = 0;
+
+            if (hitEffect != null)
+            {
+                Instantiate(hitEffect, GetAimLocation(), transform.rotation);
+            }
+
+            foreach (GameObject toDestroy in destroyOnHit)
+            {
+                Destroy (toDestroy);
+            }
+
+            Destroy(this.gameObject, lifeAfterImpact);
         }
 
-        target.TakeDamage (damage);
-
-        if (hitEffect != null)
+        public void SetTarget(Health target, float damage)
         {
-            Instantiate(hitEffect, GetAimLocation(), transform.rotation);
+            this.target = target;
+            this.damage = damage;
+
+            Destroy (gameObject, maxLifeTime);
         }
 
-        Destroy(this.gameObject);
-    }
-
-    public void SetTarget(Health target, float damage)
-    {
-        this.target = target;
-        this.damage = damage;
-    }
-
-    private Vector3 GetAimLocation()
-    {
-        CapsuleCollider targetCapsule = target.GetComponent<CapsuleCollider>();
-        if (targetCapsule == null)
+        private Vector3 GetAimLocation()
         {
-            return target.transform.position;
-        }
+            CapsuleCollider targetCapsule =
+                target.GetComponent<CapsuleCollider>();
+            if (targetCapsule == null)
+            {
+                return target.transform.position;
+            }
 
-        return target.transform.position +
-        Vector3.up * targetCapsule.height / 2;
+            return target.transform.position +
+            Vector3.up * targetCapsule.height / 2;
+        }
     }
 }
