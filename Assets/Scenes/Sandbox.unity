@@ -3721,6 +3721,10 @@ PrefabInstance:
       propertyPath: defaultWeapon
       value: 
       objectReference: {fileID: 11400000, guid: c76dc6666fc5a4ef4b040a21ee71c595, type: 2}
+    - target: {fileID: 8712190580197633507, guid: 008fde829b18a488c89d7515d4c42099, type: 3}
+      propertyPath: defaultWeaponName
+      value: Fireball
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 008fde829b18a488c89d7515d4c42099, type: 3}
 --- !u!1 &2609243855151966752
