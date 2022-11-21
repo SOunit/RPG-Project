@@ -15,5 +15,10 @@ namespace RPG.Stats
 
         [SerializeField]
         Progression progression = null;
+
+        public float GetHealth()
+        {
+            return 0;
+        }
     }
 }

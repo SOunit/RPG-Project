@@ -3709,6 +3709,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Core
       objectReference: {fileID: 0}
+    - target: {fileID: 5914356187600646473, guid: 008fde829b18a488c89d7515d4c42099, type: 3}
+      propertyPath: level
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5989010446641963224, guid: 008fde829b18a488c89d7515d4c42099, type: 3}
       propertyPath: m_UseGravity
       value: 0
