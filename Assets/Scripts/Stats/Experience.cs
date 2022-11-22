@@ -2,6 +2,9 @@ using System;
 using RPG.Saving;
 using UnityEngine;
 
+namespace RPG.Stats
+{ }
+
 public class Experience : MonoBehaviour, ISaveable
 {
     [SerializeField]
