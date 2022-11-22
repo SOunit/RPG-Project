@@ -117,12 +117,13 @@ namespace RPG.Combat
                 currentWeapon.LaunchProjectile (
                     rightHandTransform,
                     leftHandTransform,
-                    target
+                    target,
+                    gameObject
                 );
             }
             else
             {
-                target.TakeDamage(currentWeapon.GetDamage());
+                target.TakeDamage(gameObject, currentWeapon.GetDamage());
             }
         }
 

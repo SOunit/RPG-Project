@@ -222,6 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   characterClass: 0
+  progression: {fileID: 0}
 --- !u!114 &5052276806117885453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,3 +235,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fb02326469504363aecd78baae411f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1939187674903166702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7667229427012282404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a878c9555ac443e280edd5358ea3f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  experiencePoints: 0
