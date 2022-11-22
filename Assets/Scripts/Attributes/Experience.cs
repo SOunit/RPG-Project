@@ -1,6 +1,7 @@
+using RPG.Saving;
 using UnityEngine;
 
-public class Experience : MonoBehaviour
+public class Experience : MonoBehaviour, ISaveable
 {
     [SerializeField]
     float experiencePoints = 0;
@@ -10,13 +11,13 @@ public class Experience : MonoBehaviour
         experiencePoints += experience;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public object CaptureState()
     {
+        return experiencePoints;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RestoreState(object state)
     {
+        this.experiencePoints = (float) state;
     }
 }
