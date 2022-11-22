@@ -23,34 +23,14 @@ namespace RPG.Stats
         {
             BuildLookup();
 
-            // foreach (ProgressionCharacterClass
-            //     progressionClass
-            //     in
-            //     characterClasses
-            // )
-            // {
-            //     if (progressionClass.characterClass != characterClass)
-            //     {
-            //         continue;
-            //     }
-            //     foreach (ProgressionStat
-            //         progressionStat
-            //         in
-            //         progressionClass.stats
-            //     )
-            //     {
-            //         if (progressionStat.stat != stat)
-            //         {
-            //             continue;
-            //         }
-            //         if (progressionStat.levels.Length < level)
-            //         {
-            //             continue;
-            //         }
-            //         return progressionStat.levels[level - 1];
-            //     }
-            // }
-            return 0;
+            float[] levels = lookupTable[characterClass][stat];
+
+            if (levels.Length < level)
+            {
+                return 0;
+            }
+
+            return levels[level - 1];
         }
 
         private void BuildLookup()
@@ -83,6 +63,8 @@ namespace RPG.Stats
 
                 lookupTable[progressionClass.characterClass] = statLookupTable;
             }
+
+            Debug.Log (lookupTable);
         }
 
         [Serializable]
