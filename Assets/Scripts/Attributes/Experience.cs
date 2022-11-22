@@ -1,3 +1,4 @@
+using System;
 using RPG.Saving;
 using UnityEngine;
 
@@ -19,5 +20,10 @@ public class Experience : MonoBehaviour, ISaveable
     public void RestoreState(object state)
     {
         this.experiencePoints = (float) state;
+    }
+
+    public float GetPoint()
+    {
+        return experiencePoints;
     }
 }
