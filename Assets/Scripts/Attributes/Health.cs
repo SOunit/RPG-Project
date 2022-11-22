@@ -1,4 +1,3 @@
-using System;
 using RPG.Core;
 using RPG.Saving;
 using RPG.Stats;
@@ -15,7 +14,7 @@ namespace RPG.Attributes
 
         private void Start()
         {
-            healthPoints = GetComponent<BaseStats>().GetHealth();
+            healthPoints = GetComponent<BaseStats>().GetStat(Stat.Health);
         }
 
         public bool IsDead()
@@ -42,12 +41,14 @@ namespace RPG.Attributes
             }
 
             experience
-                .GainExperience(GetComponent<BaseStats>().GetExperience());
+                .GainExperience(GetComponent<BaseStats>()
+                    .GetStat(Stat.ExperienceReward));
         }
 
         public float GetPercentage()
         {
-            return 100 * (healthPoints / GetComponent<BaseStats>().GetHealth());
+            return 100 *
+            (healthPoints / GetComponent<BaseStats>().GetStat(Stat.Health));
         }
 
         private void Die()
