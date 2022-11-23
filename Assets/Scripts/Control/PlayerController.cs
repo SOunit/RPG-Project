@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using RPG.Attributes;
 using RPG.Combat;
 using RPG.Movement;
@@ -11,6 +9,27 @@ namespace RPG.Control
     public class PlayerController : MonoBehaviour
     {
         Health health;
+
+        enum CursorType
+        {
+            None,
+            Movement,
+            Combat
+        }
+
+        // to show them in unity-editor
+        [Serializable]
+        struct CursorMapping
+        {
+            public CursorType type;
+
+            public Texture2D texture;
+
+            public Vector2 hotspot;
+        }
+
+        [SerializeField]
+        CursorMapping[] cursorMappings = null;
 
         private void Awake()
         {
@@ -34,7 +53,7 @@ namespace RPG.Control
                 return;
             }
 
-            print("Nothing to do");
+            SetCursor(CursorType.None);
         }
 
         private bool InteractWithCombat()
@@ -61,9 +80,31 @@ namespace RPG.Control
                 {
                     GetComponent<Fighter>().Attack(target.gameObject);
                 }
+
+                SetCursor(CursorType.Combat);
+
                 return true;
             }
             return false;
+        }
+
+        private void SetCursor(CursorType type)
+        {
+            CursorMapping mapping = GetCursorMapping(type);
+            Cursor.SetCursor(mapping.texture, mapping.hotspot, CursorMode.Auto);
+        }
+
+        private CursorMapping GetCursorMapping(CursorType type)
+        {
+            foreach (CursorMapping mapping in cursorMappings)
+            {
+                if (mapping.type == type)
+                {
+                    return mapping;
+                }
+            }
+
+            return cursorMappings[0];
         }
 
         private bool InteractWithMovement()
@@ -77,6 +118,7 @@ namespace RPG.Control
                 {
                     GetComponent<Mover>().StartMoveAction(hit.point, 1f);
                 }
+                SetCursor(CursorType.Movement);
                 return true;
             }
             return false;
