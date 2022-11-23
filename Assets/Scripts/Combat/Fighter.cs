@@ -113,8 +113,7 @@ namespace RPG.Combat
                 return;
             }
 
-            // float damage = GetComponent<BaseStats>().GetStat(Stat.Damage);
-            float damage = 5f;
+            float damage = GetComponent<BaseStats>().GetStat(Stat.Damage);
             if (currentWeapon.HasProjectile())
             {
                 currentWeapon.LaunchProjectile (
