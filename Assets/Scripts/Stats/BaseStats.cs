@@ -20,6 +20,9 @@ namespace RPG.Stats
         [SerializeField]
         GameObject levelUpParticleEffect = null;
 
+        [SerializeField]
+        bool shouldUseModifiers = false;
+
         public event Action onLevelUp;
 
         int currentLevel = 0;
@@ -56,12 +59,18 @@ namespace RPG.Stats
             {
                 currentLevel = CalculateLevel();
             }
-            return progression.GetStat(stat, characterClass, GetLevel()) +
-            GetAdditiveModifier(stat);
+
+            return (GetBaseStat(stat) + GetAdditiveModifier(stat)) *
+            (1 + (GetPercentageModifier(stat) / 100));
         }
 
-        private float GetAdditiveModifier(Stat stat)
+        private float GetPercentageModifier(Stat stat)
         {
+            if (!shouldUseModifiers)
+            {
+                return 0;
+            }
+
             float total = 0;
 
             foreach (IModifierProvider
@@ -70,7 +79,37 @@ namespace RPG.Stats
                 GetComponents<IModifierProvider>()
             )
             {
-                foreach (float modifier in provider.GetAdditiveModifier(stat))
+                foreach (float modifier in provider.GetPercentageModifiers(stat)
+                )
+                {
+                    total += modifier;
+                }
+            }
+
+            return total;
+        }
+
+        private float GetBaseStat(Stat stat)
+        {
+            return progression.GetStat(stat, characterClass, GetLevel());
+        }
+
+        private float GetAdditiveModifier(Stat stat)
+        {
+            if (!shouldUseModifiers)
+            {
+                return 0;
+            }
+
+            float total = 0;
+
+            foreach (IModifierProvider
+                provider
+                in
+                GetComponents<IModifierProvider>()
+            )
+            {
+                foreach (float modifier in provider.GetAdditiveModifiers(stat))
                 {
                     total += modifier;
                 }

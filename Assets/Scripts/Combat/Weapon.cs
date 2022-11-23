@@ -1,6 +1,4 @@
-using System;
 using RPG.Attributes;
-using RPG.Core;
 using UnityEngine;
 
 namespace RPG.Combat
@@ -21,6 +19,9 @@ namespace RPG.Combat
 
         [SerializeField]
         float weaponDamage = 5f;
+
+        [SerializeField]
+        float percentageBonus = 0;
 
         [SerializeField]
         float weaponRange = 2f;
@@ -124,6 +125,11 @@ namespace RPG.Combat
         public float GetRange()
         {
             return weaponRange;
+        }
+
+        public float GetPercentageBonus()
+        {
+            return percentageBonus;
         }
 
         public float GetDamage()
