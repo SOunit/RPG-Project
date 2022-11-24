@@ -40,10 +40,7 @@ namespace RPG.Control
 
         void Update()
         {
-            if (InteractWithUI())
-            {
-                return;
-            }
+            if (InteractWithUI()) return;
 
             if (health.IsDead())
             {
@@ -51,17 +48,32 @@ namespace RPG.Control
                 return;
             }
 
-            if (InteractWithCombat())
-            {
-                return;
-            }
-
-            if (InteractWithMovement())
-            {
-                return;
-            }
+            if (InteractWithComponent()) return;
+            if (InteractWithCombat()) return;
+            if (InteractWithMovement()) return;
 
             SetCursor(CursorType.None);
+        }
+
+        private bool InteractWithComponent()
+        {
+            RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
+            foreach (RaycastHit hit in hits)
+            {
+                IRaycastable[] raycastables =
+                    hit.transform.GetComponents<IRaycastable>();
+
+                foreach (IRaycastable raycastable in raycastables)
+                {
+                    if (raycastable.HandleRaycast(this))
+                    {
+                        SetCursor(CursorType.Combat);
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
 
         private bool InteractWithUI()
