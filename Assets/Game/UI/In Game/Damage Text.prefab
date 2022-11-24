@@ -45,6 +45,8 @@ GameObject:
   - component: {fileID: 189827743681289651}
   - component: {fileID: 2535617223610021125}
   - component: {fileID: 3038335308652518318}
+  - component: {fileID: 8595503951453238796}
+  - component: {fileID: 307292344306838533}
   m_Layer: 5
   m_Name: Damage Text
   m_TagString: Untagged
@@ -146,6 +148,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c3282ef9b2c4249ba4e4fa6c49ce0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!111 &8595503951453238796
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2714101333753825058}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 3708bd0519df0457b9032cb085d3f822, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 3708bd0519df0457b9032cb085d3f822, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!225 &307292344306838533
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2714101333753825058}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3296647546116053210
 GameObject:
   m_ObjectHideFlags: 0
