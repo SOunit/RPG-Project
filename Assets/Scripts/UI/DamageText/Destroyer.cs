@@ -9,7 +9,7 @@ namespace RPG.UI.DamageText
 
         public void DestroyTarget()
         {
-            Destroy (targetToDestroy);
+            // Destroy (targetToDestroy);
         }
     }
 }
