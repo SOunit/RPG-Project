@@ -259,6 +259,17 @@ MonoBehaviour:
   progression: {fileID: 11400000, guid: db6adb8441890410bafaf0875fd17e2c, type: 2}
   levelUpParticleEffect: {fileID: 0}
   shouldUseModifiers: 0
+--- !u!114 &3979189051431353449 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -786089532931469610, guid: 5b0bf678d50a64afa9c36a5c1c90928b, type: 3}
+  m_PrefabInstance: {fileID: 4769264589001454271}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301382485926442216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c20fbd0f31af420991bd3f38c107f85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8088233929245225604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -310,6 +321,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2734525768657524760, guid: 1ca47f3a27ff24df1bd8e5ab29da90db, type: 3}
+      propertyPath: healthComponent
+      value: 
+      objectReference: {fileID: 3979189051431353449}
     - target: {fileID: 3398802079824673589, guid: 1ca47f3a27ff24df1bd8e5ab29da90db, type: 3}
       propertyPath: m_Name
       value: Health Bar
