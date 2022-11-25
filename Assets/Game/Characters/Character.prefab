@@ -180,6 +180,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   regenerationPercentage: 70
+  takeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -4047377991479137236, guid: b94fd07e54d7c4c6ebfea45316e8b135, type: 3}
+        m_TargetAssemblyTypeName: RPG.UI.DamageText.DamageTextSpawner, Assembly-CSharp
+        m_MethodName: Spawn
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3533218533770186689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,6 +232,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5773795702912616043}
     m_Modifications:
+    - target: {fileID: -4047377991479137236, guid: b94fd07e54d7c4c6ebfea45316e8b135, type: 3}
+      propertyPath: damageTextPrefab
+      value: 
+      objectReference: {fileID: 4128973743772516651, guid: b463789338f464785aeecbf2c429317e, type: 3}
     - target: {fileID: 1231067416474697193, guid: b94fd07e54d7c4c6ebfea45316e8b135, type: 3}
       propertyPath: m_RootOrder
       value: 0

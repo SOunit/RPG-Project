@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace RPG.UI.DamageText
@@ -9,9 +7,9 @@ namespace RPG.UI.DamageText
         [SerializeField]
         DamageText damageTextPrefab = null;
 
-        void Start()
+        private void Start()
         {
-            Spawn(10f);
+            Spawn(11f);
         }
 
         public void Spawn(float damage)

@@ -2824,7 +2824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5944706870796094913, guid: 728c358f3914d4ddc9b1f6aa4fea5af2, type: 3}
       propertyPath: chaseDistance
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5944706870796094913, guid: 728c358f3914d4ddc9b1f6aa4fea5af2, type: 3}
       propertyPath: currentWaypoint
@@ -3709,6 +3709,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1301382485926442196, guid: 728c358f3914d4ddc9b1f6aa4fea5af2, type: 3}
   m_PrefabInstance: {fileID: 1966220010}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1995535189 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9013261159155177871, guid: 008fde829b18a488c89d7515d4c42099, type: 3}
+  m_PrefabInstance: {fileID: 1333227833362559191}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20c0a9f28adbe4af2b0732e443be32bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1998773034
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3722,7 +3733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3174521076616754897, guid: 464dee613a8c349b9acd12a91de1834b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.65999985
+      value: 2.63
       objectReference: {fileID: 0}
     - target: {fileID: 3174521076616754897, guid: 464dee613a8c349b9acd12a91de1834b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3898,6 +3909,14 @@ PrefabInstance:
     - target: {fileID: 5989010446641963224, guid: 008fde829b18a488c89d7515d4c42099, type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6760026228352091518, guid: 008fde829b18a488c89d7515d4c42099, type: 3}
+      propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1995535189}
+    - target: {fileID: 6760026228352091518, guid: 008fde829b18a488c89d7515d4c42099, type: 3}
+      propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Spawn
       objectReference: {fileID: 0}
     - target: {fileID: 8712190580197633507, guid: 008fde829b18a488c89d7515d4c42099, type: 3}
       propertyPath: defaultWeapon
