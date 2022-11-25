@@ -42,6 +42,7 @@ namespace RPG.SceneManagement
             }
 
             if (Input.GetKeyDown(KeyCode.Delete))
+            // if (Input.GetKeyDown(KeyCode.D))
             {
                 Delete();
             }

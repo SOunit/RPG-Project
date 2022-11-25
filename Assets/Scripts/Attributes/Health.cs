@@ -14,7 +14,10 @@ namespace RPG.Attributes
         float regenerationPercentage = 70;
 
         [SerializeField]
-        UnityEvent takeDamage;
+        TakeDamageEvent takeDamage;
+
+        [Serializable]
+        public class TakeDamageEvent : UnityEvent<float> { }
 
         LazyValue<float> healthPoints;
 
@@ -71,7 +74,7 @@ namespace RPG.Attributes
             }
             else
             {
-                takeDamage.Invoke();
+                takeDamage.Invoke (damage);
             }
         }
 
