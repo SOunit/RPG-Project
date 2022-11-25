@@ -86,6 +86,10 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 221719350164079586, guid: 5b0bf678d50a64afa9c36a5c1c90928b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5773795702053840459, guid: 5b0bf678d50a64afa9c36a5c1c90928b, type: 3}
       propertyPath: weapon
       value: 
@@ -158,6 +162,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6184223976017007143, guid: 5b0bf678d50a64afa9c36a5c1c90928b, type: 3}
+      propertyPath: damageTextPrefab
+      value: 
+      objectReference: {fileID: 4128973743772516651, guid: b463789338f464785aeecbf2c429317e, type: 3}
     - target: {fileID: 8850501428396325601, guid: 5b0bf678d50a64afa9c36a5c1c90928b, type: 3}
       propertyPath: characterClass
       value: 1
@@ -246,6 +254,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12e1b08fd53c472b9a3e9604ecf9286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
+  startingLevel: 1
   characterClass: 1
   progression: {fileID: 11400000, guid: db6adb8441890410bafaf0875fd17e2c, type: 2}
+  levelUpParticleEffect: {fileID: 0}
+  shouldUseModifiers: 0
