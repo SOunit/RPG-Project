@@ -253,6 +253,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8610498268826130635, guid: 5b9da504a3b124a9ba9c4b27f7692130, type: 3}
+      propertyPath: fadeInTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8610498268826130635, guid: 5b9da504a3b124a9ba9c4b27f7692130, type: 3}
       propertyPath: destination
       value: 0
       objectReference: {fileID: 0}
@@ -2390,6 +2394,10 @@ PrefabInstance:
     - target: {fileID: 662459755265710131, guid: 5b9da504a3b124a9ba9c4b27f7692130, type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8610498268826130635, guid: 5b9da504a3b124a9ba9c4b27f7692130, type: 3}
+      propertyPath: fadeInTime
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8610498268826130635, guid: 5b9da504a3b124a9ba9c4b27f7692130, type: 3}
       propertyPath: destination
