@@ -71,8 +71,6 @@ namespace RPG.Stats
 
                 lookupTable[progressionClass.characterClass] = statLookupTable;
             }
-
-            Debug.Log (lookupTable);
         }
 
         [Serializable]
