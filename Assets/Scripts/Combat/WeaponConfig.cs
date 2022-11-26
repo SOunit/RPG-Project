@@ -15,7 +15,7 @@ namespace RPG.Combat
         AnimatorOverrideController animatorOverride = null;
 
         [SerializeField]
-        GameObject equippedPrefab = null;
+        Weapon equippedPrefab = null;
 
         [SerializeField]
         float weaponDamage = 5f;
@@ -45,8 +45,8 @@ namespace RPG.Combat
             {
                 Transform handTransform = GetTransform(rightHand, leftHand);
 
-                GameObject weapon = Instantiate(equippedPrefab, handTransform);
-                weapon.name = weaponName;
+                Weapon weapon = Instantiate(equippedPrefab, handTransform);
+                weapon.gameObject.name = weaponName;
             }
 
             var overrideController =
