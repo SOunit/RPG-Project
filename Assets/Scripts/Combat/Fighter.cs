@@ -127,12 +127,15 @@ namespace RPG.Combat
         // Animation Event
         void Hit()
         {
-            if (!target)
-            {
-                return;
-            }
+            if (!target) return;
 
             float damage = GetComponent<BaseStats>().GetStat(Stat.Damage);
+
+            if (currentWeapon.value != null)
+            {
+                currentWeapon.value.OnHit();
+            }
+
             if (currentWeaponConfig.HasProjectile())
             {
                 currentWeaponConfig.LaunchProjectile (
